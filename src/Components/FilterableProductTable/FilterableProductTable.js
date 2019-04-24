@@ -10,9 +10,10 @@ export class FilterableProductTable extends Component {
   };
 
   searchResults = e => {
-    let value = e.target.value;
+    let value = e.target.value.toLowerCase();
     let search = this.state.data.filter(e => {
-      return e.name.toLowerCase().indexOf(value) !== -1;
+      let name = e.name.toLowerCase();
+      return name.indexOf(value) !== -1;
     });
 
     this.setState({

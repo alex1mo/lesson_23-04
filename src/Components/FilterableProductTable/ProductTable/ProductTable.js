@@ -18,11 +18,13 @@ const ProductTable = props => {
         return (
           <div key={i}>
             <ProductCategoryRow category={category} />
-            <ProductRow
-              data={data.filter(product => {
-                return category === product.category.toLowerCase();
-              })}
-            />
+            <div>
+              <ProductRow
+                data={data.filter(product => {
+                  return category === product.category.toLowerCase();
+                })}
+              />
+            </div>
           </div>
         );
       })}
